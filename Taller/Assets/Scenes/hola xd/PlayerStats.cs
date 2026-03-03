@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class PlayerStats : MonoBehaviour
 {
     [Header("Health Settings")]
@@ -11,7 +12,7 @@ public class PlayerStats : MonoBehaviour
     private float speedMultiplier = 1f;
 
     [Header("Shield")]
-    private bool isShieldActive = false;
+    [SerializeField] private bool isShieldActive = false;
 
     public float CurrentHealth => currentHealth;
     public float MaxHealth => maxHealth;
@@ -23,7 +24,7 @@ public class PlayerStats : MonoBehaviour
     public void Heal(float amount)
     {
         if (amount <= 0f) 
-        messageText.text = "Ingrese un valor válido";
+       
         return;
 
         currentHealth += amount;
@@ -39,6 +40,8 @@ public class PlayerStats : MonoBehaviour
         return;
 
         speedMultiplier = multiplier;
+        //CurrentSpeed
+        return;
     }
 
     public void SetShield(bool active)

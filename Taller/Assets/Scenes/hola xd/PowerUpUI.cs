@@ -3,9 +3,7 @@ using TMPro;
 
 public class PowerUpUI : MonoBehaviour
 {
-    // --------------------
-    // ENUM
-    // --------------------
+    
     public enum PowerUpType
     {
         Heal,
@@ -14,22 +12,15 @@ public class PowerUpUI : MonoBehaviour
         DamageBoost
     }
 
-    // --------------------
-    // REFERENCIAS
-    // --------------------
     [Header("References")]
     [SerializeField] private PlayerStats playerStats;
     [SerializeField] private TMP_InputField valueInput;
     [SerializeField] private TMP_Text messageText;
 
-    // --------------------
-    // ESTADO
-    // --------------------
+    
     private PowerUpType selectedPowerUp;
 
-    // =========================================================
-    // 1️⃣ MÉTODOS DE SELECCIÓN (SOLO CAMBIAN EL ENUM)
-    // =========================================================
+    
 
     public void SelectHeal() => SetSelectedPowerUp(PowerUpType.Heal);
 
@@ -45,9 +36,7 @@ public class PowerUpUI : MonoBehaviour
         messageText.text = $"Seleccionado: {selectedPowerUp}";
     }
 
-    // =========================================================
-    // 2️⃣ BOTÓN APLICAR (ORQUESTA TODO EL FLUJO)
-    // =========================================================
+   
 
     public void ApplySelectedPowerUp()
     {
@@ -60,9 +49,7 @@ public class PowerUpUI : MonoBehaviour
         ApplyPowerUp(value);
     }
 
-    // =========================================================
-    // 3️⃣ VALIDACIONES
-    // =========================================================
+
 
     private bool ValidateReferences()
     {
@@ -122,10 +109,7 @@ public class PowerUpUI : MonoBehaviour
         return true;
     }
 
-    // =========================================================
-    // 4️⃣ EJECUCIÓN (SWITCH SOBRE ENUM)
-    // =========================================================
-
+    
     private void ApplyPowerUp(float value)
     {
         switch (selectedPowerUp)
