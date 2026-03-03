@@ -13,22 +13,18 @@ public class PlayerStats : MonoBehaviour
     [Header("Shield")]
     private bool isShieldActive = false;
 
-    // --------------------
-    // PROPIEDADES PÚBLICAS (solo lectura)
-    // --------------------
-
     public float CurrentHealth => currentHealth;
     public float MaxHealth => maxHealth;
     public float CurrentSpeed => baseSpeed * speedMultiplier;
     public bool IsShieldActive => isShieldActive;
 
-    // --------------------
-    // MÉTODOS DEL MODELO
-    // --------------------
+    
 
     public void Heal(float amount)
     {
-        if (amount <= 0f) return;
+        if (amount <= 0f) 
+        messageText.text = "Ingrese un valor válido";
+        return;
 
         currentHealth += amount;
 
@@ -38,7 +34,9 @@ public class PlayerStats : MonoBehaviour
 
     public void SetSpeedMultiplier(float multiplier)
     {
-        if (multiplier <= 0f) return;
+        if (multiplier <= 0f) 
+        messageText.text = "Ingrese un valor válido";
+        return;
 
         speedMultiplier = multiplier;
     }
