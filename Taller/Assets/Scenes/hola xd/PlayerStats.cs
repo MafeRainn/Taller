@@ -38,15 +38,15 @@ public class PlayerStats : MonoBehaviour
         if (damage <= 0f)
             return;
 
-        // Si hay escudo activo, bloquea el daño
+
         if (isShieldActive)
         {
             isShieldActive = false;
             Debug.Log("El escudo bloqueó el daño y se rompió");
-            return; // no se aplica daño a la vida
+            return; 
         }
 
-        // Si no hay escudo, se aplica daño
+       
         currentHealth -= damage;
 
         if (currentHealth < 0f)
@@ -62,7 +62,7 @@ public class PlayerStats : MonoBehaviour
         return;
 
         speedMultiplier = multiplier;
-        //CurrentSpeed
+     
         return;
     }
 

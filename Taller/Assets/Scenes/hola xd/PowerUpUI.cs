@@ -42,10 +42,10 @@ public class PowerUpUI : MonoBehaviour
     {
         if (!ValidateReferences()) return;
 
-        // SHIELD NO NECESITA VALOR
+        
         if (selectedPowerUp == PowerUpType.Shield)
         {
-            if (!ValidateRules(1f)) return; // valor ficticio solo para mantener la lógica
+            if (!ValidateRules(1f)) return;
 
             ApplyPowerUp(1f);
             return;
